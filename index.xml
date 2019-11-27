@@ -88,6 +88,12 @@ amounts of data, it is 2% less efficient than base64. Developers might avoid
 Base58 if a 2% increase in efficiency over large data sets is desired.
       </t>
 
+      <t>
+This document specifies the base 58 encoding scheme, including an introduction
+to the benefits of the approach, the encoding and decoding algorithm,
+alternative alphabets, and security considerations.
+      </t>
+
       <section title="Requirements Language">
         <t>
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
