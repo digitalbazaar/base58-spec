@@ -92,7 +92,7 @@ document are to be interpreted as described in RFC 2119.
 
     <?rfc needLines="8" ?>
 
-    <section anchor="algorithm" title="The Base58 Alphabet">
+    <section anchor="alphabet" title="The Base58 Alphabet">
       <t>
 The Base58 alphabet consists of the following characters:
       </t>
@@ -105,7 +105,7 @@ The Base58 alphabet consists of the following characters:
 Each byte value from 0 to 57 maps to the alphabet above in the following way:
       </t>
 
-      <texttable anchor="mapping-table" title="Base58 Mapping Table">
+      <texttable anchor="alphabet-table" title="Base58 Mapping Table">
         <ttcol align="center">Value</ttcol>
         <ttcol align="center">Character</ttcol>
         <ttcol align="center">Value</ttcol>
@@ -141,6 +141,59 @@ harm interoperability.
       </t>
 
     </section>
+
+    <section anchor="encode" title="The Base58 Encoding Algorithm">
+      <t>
+To encode an array of bytes to a Base58 encoded value, run the following
+algorithm. All mathematical operations MUST be performed using integer
+arithmetic. Start by initializing a 'zero_counter' to zero (0x0), an
+'encoding_flag' to zero (0x0), a 'b58_bytes' array, a 'b58_encoding' array,  and
+a 'carry' value to zero (0x0). For each byte in the array of bytes and
+while 'carry' does not equal zero (0x0) after the first iteration:
+      </t>
+
+      <list style="numbers">
+        <t>
+If 'encoding_flag' is not set, and if the byte is a zero (0x0), increment
+the value of 'zero_counter'. If the value is not zero (0x0),
+set 'encoding_flag' to true (0x1).
+        </t>
+        <t>
+If 'encoding_flag' is set, multiply the current byte value by 256 and add it  to
+'carry'.
+        </t>
+        <t>
+Set the corresponding byte value in 'b58_bytes' to the value of 'carry' modulus
+58.
+        </t>
+        <t>
+Set 'carry' to the value of 'carry' divided by 58.
+        </t>
+      </list>
+
+      <t>
+Once the 'b58_bytes' array has been constructed, generate the final
+'b58_encoding' using the following algorithm. Set the first 'zero_counter'
+bytes in 'b58_encoding' to '1'. Then, for every byte in 'b58_array', map the
+byte value using the Base58 alphabet in the previous section to its
+corresponding character in 'b58_encoding'. Return 'b58_encoding' as the
+Base58 representation of the input array of bytes.
+      </t>
+
+    </section>
+
+    <section anchor="decode" title="The Base58 Decoding Algorithm">
+      <t>
+
+      </t>
+    </section>
+
+    <section anchor="examples" title="Examples">
+      <t>
+
+      </t>
+    </section>
+
 
     <section anchor="Acknowledgements" title="Acknowledgements">
       <t>
