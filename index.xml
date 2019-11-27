@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<!DOCTYPE rfc PUBLIC "-//IETF//DTD RFC 2629//EN" "https://xml2rfc.tools.ietf.org/authoring/rfc2629.dtd" [
+  <!ENTITY rfc2119 SYSTEM "https://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.2119.xml">
+  <!ENTITY rfc5646 SYSTEM "https://xml2rfc.tools.ietf.org/public/rfc/bibxml/reference.RFC.5646.xml">
+]>
+<?xml-stylesheet type='text/xsl' href='rfc2629.xsl' ?>
+
+<?rfc strict="yes" ?>
+<?rfc toc="yes"?>
+<?rfc tocdepth="4"?>
+<?rfc symrefs="yes"?>
+<?rfc sortrefs="yes" ?>
+<?rfc compact="yes" ?>
+<?rfc subcompact="no" ?>
+
+<rfc category="info" docName="draft-msporny-base58"
+     ipr="trust200902" submissionType="independent">
+  <front>
+    <title abbrev="Base58 Encoding">The Base58 Encoding Scheme</title>
+
+    <author fullname="Manu Sporny" initials="M.S." surname="Sporny">
+      <organization>Digital Bazaar</organization>
+      <address>
+        <email>msporny@digitalbazaar.com</email>
+      </address>
+    </author>
+
+    <!-- Meta-data Declarations -->
+    <date month="November" year="2019" />
+    <area>General</area>
+    <workgroup>Internet Engineering Task Force</workgroup>
+    <keyword>base</keyword>
+    <keyword>encoding</keyword>
+    <keyword>base58</keyword>
+    <keyword>bitcoin</keyword>
+    <abstract>
+      <t>
+This document specifies the base 58 encoding scheme, including an introduction
+to the benefits of the approach, the encoding and decoding algorithm,
+alternative alphabets, and security considerations.
+      </t>
+    </abstract>
+  </front>
+
+  <middle>
+    <section title="Introduction">
+
+
+      <section title="Requirements Language">
+        <t>
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+"SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+document are to be interpreted as described in RFC 2119.
+        </t>
+      </section>
+    </section>
+
+    <?rfc needLines="8" ?>
+
+    <section anchor="Acknowledgements" title="Acknowledgements">
+      <t>
+Thanks to
+      </t>
+    </section>
+
+    <section anchor="Security" title="Security Considerations">
+      <t>
+      </t>
+    </section>
+  </middle>
+
+  <back>
+  </back>
+</rfc>
