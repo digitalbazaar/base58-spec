@@ -44,7 +44,42 @@ alternative alphabets, and security considerations.
 
   <middle>
     <section title="Introduction">
-
+      <t>
+When trasmitting data, it can be useful to encode the data in a way that
+survives lower fidelity transmission mechanisms. For example, encoding data
+using a human alphabet, or encoding the data in a way that a human being can
+visually confirm the encoded data while reducing the opportunity to make a
+mistake. The Base58 encoding scheme is similar to the Base64 encoding scheme in
+that it can translate any binary data to a text string. It is different from
+Base64 in that the conversion alphabet has been carefully picked to work well
+in environments where a human being, such as a developer or other human being,
+might need to work with the information.
+      </t>
+      <t>
+Base58 is designed with a number of usability characteristics in mind that
+Base64 does not consider. First, similar looking letters are omitted such as 0
+(zero), O (capital o), I (capital i) and l (lower case L). Doing so eliminates
+the possibility of a human being mistaking similar characters for a different
+character. Second, the non-alphanumeric characters + (plus), = (equals), and /
+(slash) are omitted to make it possible to use Base58 values in all modern file
+systems and URL schemes without the need for translation. Third, by using only
+alphanumeric characters, easy double-click or double tap selection is possible
+in modern computer interfaces. Fourth, social messaging systems do not line
+break on alphanumeric strings making it easier to e-mail or message Base58
+values for debugging or sharing purposes. Fifth, unlike Base64, there is no
+padding making many Base58 values smaller (on average) or the same size as
+Base64 values for values up to 64 bytes, and less than 2% larger for values
+larger than 256 bytes. Finally, Base64 has eleven encoding variations that lead
+to miscommunication among developers on which variety of Base64 to use. This
+specification asserts that there is just one simple encoding mechanism for
+Base58, making implementations and developer interactions simpler.
+      </t>
+      <t>
+While Base58 does have a number of beneficial usability features, it is not
+always a good choice for an encoding format. For example, when encoding large
+amounts of data, it is 2% less efficient than base64. Developers might avoid
+Base58 if a 2% increase in efficiency over large data sets is desired.
+      </t>
 
       <section title="Requirements Language">
         <t>
@@ -56,6 +91,7 @@ document are to be interpreted as described in RFC 2119.
     </section>
 
     <?rfc needLines="8" ?>
+
 
     <section anchor="Acknowledgements" title="Acknowledgements">
       <t>
