@@ -184,20 +184,47 @@ Base58 representation of the input array of bytes.
 
     <section anchor="decode" title="The Base58 Decoding Algorithm">
       <t>
-
+To decode a Base58 encoded array of bytes to a decoded array of bytes, run
+the following algorithm. All mathematical operations MUST be performed using
+integer arithmetic. Start by initializing a 'raw_bytes' array, and a
+'carry' value to zero (0x0). For each input byte in the array of input bytes:
       </t>
-    </section>
 
-    <section anchor="examples" title="Examples">
-      <t>
+      <list style="numbers">
+        <t>
+Set 'carry' to the byte value associated with the input byte character. If
+a mapping does not exist, return an error code.
+        </t>
+        <t>
+While 'carry' does not equal zero and there are input bytes remaining:
+        </t>
+        <list style="numbers">
+          <t>
+Multiply the input byte value by 58 and add it to 'carry'.
+          </t>
+          <t>
+Set the output byte value to 'carry' modulus 256.
+          </t>
+          <t>
+Set 'carry' to the value of 'carry' divided by 256.
+          </t>
+        </list>
+        <t>
+Set the corresponding byte value in 'raw_bytes' to the value of 'carry' modulus
+58.
+        </t>
+        <t>
+Set 'carry' to the value of 'carry' divided by 58.
+        </t>
+      </list>
 
-      </t>
     </section>
 
 
     <section anchor="Acknowledgements" title="Acknowledgements">
       <t>
-Thanks to
+Thanks to Satoshi Nakamoto for inventing the Base58 encoding format and the
+Bitcoin community for popularizing its usage.
       </t>
     </section>
 
