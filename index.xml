@@ -13,10 +13,17 @@
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
 
-<rfc category="info" docName="draft-msporny-base58"
+<rfc category="info" docName="draft-msporny-base58-01"
      ipr="trust200902" submissionType="independent">
   <front>
     <title abbrev="Base58 Encoding">The Base58 Encoding Scheme</title>
+
+    <author fullname="Satoshi Nakamoto" initials="S.N." surname="Nakamoto">
+      <organization>Bitcoin</organization>
+      <address>
+        <email>satoshin@gmx.com</email>
+      </address>
+    </author>
 
     <author fullname="Manu Sporny" initials="M.S." surname="Sporny">
       <organization>Digital Bazaar</organization>
@@ -150,7 +157,6 @@ arithmetic. Start by initializing a 'zero_counter' to zero (0x0), an
 'encoding_flag' to zero (0x0), a 'b58_bytes' array, a 'b58_encoding' array,  and
 a 'carry' value to zero (0x0). For each byte in the array of bytes and
 while 'carry' does not equal zero (0x0) after the first iteration:
-      </t>
 
       <list style="numbers">
         <t>
@@ -170,6 +176,7 @@ Set the corresponding byte value in 'b58_bytes' to the value of 'carry' modulus
 Set 'carry' to the value of 'carry' divided by 58.
         </t>
       </list>
+    </t>
 
       <t>
 Once the 'b58_bytes' array has been constructed, generate the final
@@ -188,7 +195,6 @@ To decode a Base58 encoded array of bytes to a decoded array of bytes, run
 the following algorithm. All mathematical operations MUST be performed using
 integer arithmetic. Start by initializing a 'raw_bytes' array, and a
 'carry' value to zero (0x0). For each input byte in the array of input bytes:
-      </t>
 
       <list style="numbers">
         <t>
@@ -197,7 +203,6 @@ a mapping does not exist, return an error code.
         </t>
         <t>
 While 'carry' does not equal zero and there are input bytes remaining:
-        </t>
         <list style="numbers">
           <t>
 Multiply the input byte value by 58 and add it to 'carry'.
@@ -209,6 +214,7 @@ Set the output byte value to 'carry' modulus 256.
 Set 'carry' to the value of 'carry' divided by 256.
           </t>
         </list>
+        </t>
         <t>
 Set the corresponding byte value in 'raw_bytes' to the value of 'carry' modulus
 58.
@@ -217,6 +223,7 @@ Set the corresponding byte value in 'raw_bytes' to the value of 'carry' modulus
 Set 'carry' to the value of 'carry' divided by 58.
         </t>
       </list>
+      </t>
 
     </section>
 
