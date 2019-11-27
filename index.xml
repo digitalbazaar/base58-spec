@@ -220,6 +220,35 @@ Set 'carry' to the value of 'carry' divided by 58.
 
     </section>
 
+    <section anchor="examples" title="Test Vectors">
+      <t>
+The following examples can be used as test vectors for the algorithms in
+this specification:
+      </t>
+
+      <t>
+The Base58 encoded value for "Hello World!" is:
+        <figure>
+          <artwork>2NEpo7TZRRrLZSi2U</artwork>
+        </figure>
+      </t>
+
+      <t>
+The Base58 encoded value for "The quick brown fox jumps over the lazy dog." is:
+        <figure>
+          <artwork>USm3fpXnKG5EUBx2ndxBDMPVciP5hGey2Jh4NDv6gmeo1LkMeiKrLJUUBk6Z</artwork>
+        </figure>
+      </t>
+
+      <t>
+The Base58 encoded value for 0x0000287fb4cd is:
+        <figure>
+          <artwork>111233QC4</artwork>
+        </figure>
+      </t>
+
+    </section>
+
 
     <section anchor="Acknowledgements" title="Acknowledgements">
       <t>
