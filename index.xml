@@ -106,13 +106,13 @@ Each byte value from 0 to 57 maps to the alphabet above in the following way:
       </t>
 
       <texttable anchor="alphabet-table" title="Base58 Mapping Table">
-        <ttcol align="center">Value</ttcol>
+        <ttcol align="center">Byte</ttcol>
         <ttcol align="center">Character</ttcol>
-        <ttcol align="center">Value</ttcol>
+        <ttcol align="center">Byte</ttcol>
         <ttcol align="center">Character</ttcol>
-        <ttcol align="center">Value</ttcol>
+        <ttcol align="center">Byte</ttcol>
         <ttcol align="center">Character</ttcol>
-        <ttcol align="center">Value</ttcol>
+        <ttcol align="center">Byte</ttcol>
         <ttcol align="center">Character</ttcol>
 
         <c>0</c><c>1</c> <c>1</c><c>2</c> <c>2</c><c>3</c> <c>3</c><c>4</c>
