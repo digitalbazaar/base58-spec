@@ -13,7 +13,7 @@
 <?rfc compact="yes" ?>
 <?rfc subcompact="no" ?>
 
-<rfc category="info" docName="draft-msporny-base58-02"
+<rfc category="info" docName="draft-msporny-base58-03"
      ipr="trust200902" submissionType="independent">
   <front>
     <title abbrev="Base58 Encoding">The Base58 Encoding Scheme</title>
@@ -33,7 +33,7 @@
     </author>
 
     <!-- Meta-data Declarations -->
-    <date month="October" year="2020" />
+    <date month="March" year="2021" />
     <area>General</area>
     <workgroup>Internet Engineering Task Force</workgroup>
     <keyword>base</keyword>
