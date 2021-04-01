@@ -18,13 +18,6 @@
   <front>
     <title abbrev="Base58 Encoding">The Base58 Encoding Scheme</title>
 
-    <author fullname="Satoshi Nakamoto" initials="S.N." surname="Nakamoto">
-      <organization>Bitcoin</organization>
-      <address>
-        <email>satoshin@gmx.com</email>
-      </address>
-    </author>
-
     <author fullname="Manu Sporny" initials="M.S." surname="Sporny">
       <organization>Digital Bazaar</organization>
       <address>
