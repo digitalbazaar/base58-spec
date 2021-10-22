@@ -84,8 +84,10 @@ implementations and developer interactions simpler.
       <t>
 While Base58 does have a number of beneficial usability features, it is not
 always a good choice for an encoding format. For example, when encoding large
-amounts of data, it is 2% less efficient than base64. Developers might avoid
-Base58 if a 2% increase in efficiency over large data sets is desired.
+amounts of data, it is 2% less efficient than base64. Base58 encoding also has
+an average worst-case algorithm complexity that is O(n^2). For these reasons,
+developers might want to avoid using Base58 for encoding byte strings that
+are greater than 256 bytes in length.
       </t>
 
       <t>
@@ -244,6 +246,11 @@ Set 'carry' to the value of 'carry' divided by 58.
 
     </section>
 
+    <section anchor="security" title="Security Considerations">
+      <t>
+      </t>
+    </section>
+
     <section anchor="examples" title="Test Vectors">
       <t>
 The following examples can be used as test vectors for the algorithms in
@@ -273,6 +280,31 @@ The Base58 encoded value for 0x0000287fb4cd is:
 
     </section>
 
+    <section anchor="Security" title="Security Considerations">
+      <t>
+This section contains a variety of security considerations that implementers
+using this specification are advised to consider before deploying this
+technology in a production setting.
+      </t>
+
+      <section title="Quadratic behaviour of base58 algorithms">
+        <t>
+In general, when converting from a source base-encoding to a target
+base-encoding, if the target encoding is not the a numerical power of the source
+encoding, it is possible for the algorithm to degrade from linear algorithm
+complexity into quadratic algorithm complexity. That is, converting from base-2
+(binary) to base-32 or base-64 can be done with a worst-case algorithm
+complexity of O(n) time, but converting from base-2 to base-58 has a worst-case
+complexity of O(n^2). In short, base-58 does not work well for encoding large
+byte values.
+        </t>
+        <t>
+Implementers are urged to ensure that their production software imposes limits
+on input size. Encoding values greater than 256 bytes in base58 is NOT
+RECOMMENDED.
+        </t>
+      </section>
+    </section>
 
     <section anchor="Acknowledgements" title="Acknowledgements">
       <t>
@@ -281,12 +313,9 @@ Bitcoin community for popularizing its usage.
       </t>
     </section>
 
-    <section anchor="Security" title="Security Considerations">
-      <t>
-      </t>
-    </section>
   </middle>
 
   <back>
+
   </back>
 </rfc>
